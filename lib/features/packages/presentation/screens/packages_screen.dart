@@ -8,6 +8,7 @@ import '../widgets/packages_filter_bar.dart';
 import '../widgets/packages_search_bar.dart';
 import '../../../../shared/widgets/app_error_widget.dart';
 import '../../../../shared/widgets/shimmer_loading.dart';
+import 'package:hooks/hooks.dart';
 
 class PackagesScreen extends ConsumerWidget {
   const PackagesScreen({super.key});

@@ -7,6 +7,8 @@ import '../../../../core/constants/app_constants.dart';
 import '../../domain/entities/package_entity.dart';
 import '../../domain/usecases/download_package.dart';
 import '../../domain/usecases/get_available_packages.dart';
+import 'package:hooks/hooks.dart';
+
 
 part 'packages_provider.g.dart';
 

@@ -6,6 +6,7 @@ import '../../domain/entities/package_entity.dart';
 import '../providers/packages_provider.dart';
 import 'download_button.dart';
 import 'package_status_badge.dart';
+import 'package:hooks/hooks.dart';
 
 class PackageCard extends ConsumerWidget {
   final PackageEntity package;
