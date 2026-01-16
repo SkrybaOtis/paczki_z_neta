@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'dart:io';
 
 
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -31,8 +30,8 @@ Future<Directory> packagesDirectory(Ref ref) async {
 
 @riverpod
 LocalStorage localStorage(Ref ref) {
-  final prefs = ref.watch(sharedPreferencesProvider).valueOrNull;
-  final packagesDir = ref.watch(packagesDirectoryProvider).valueOrNull;
+  final prefs = ref.watch(sharedPreferencesProvider).value;
+  final packagesDir = ref.watch(packagesDirectoryProvider).value;
   
   if (prefs == null || packagesDir == null) {
     throw const StorageException(message: 'Storage not initialized');

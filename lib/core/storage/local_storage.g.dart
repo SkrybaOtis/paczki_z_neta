@@ -127,4 +127,4 @@ final class LocalStorageProvider
   }
 }
 
-String _$localStorageHash() => r'4564b2732343b7ed16d905bcca9ad38eb60760e9';
+String _$localStorageHash() => r'7a8ae5172f98592ae93aff1cd08815d47a2e85db';

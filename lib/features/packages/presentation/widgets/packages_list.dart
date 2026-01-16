@@ -6,6 +6,7 @@ import '../../domain/entities/package_entity.dart';
 import '../providers/packages_provider.dart';
 import 'package_card.dart';
 import 'package:hooks/hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PackagesList extends ConsumerStatefulWidget {
   const PackagesList({super.key});

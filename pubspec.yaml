@@ -39,28 +39,28 @@ dependencies:
   riverpod_annotation: ^4.0.0
   
   # Networking
-  dio: ^5.4.0
+  dio: ^5.9.0
   
   # Local Storage
-  path_provider: ^2.1.1
-  shared_preferences: ^2.2.2
+  path_provider: ^2.1.5
+  shared_preferences: ^2.5.4
   
   # Functional Programming
-  fpdart: ^1.1.0
+  fpdart: ^1.2.0
   
   # Utils
-  equatable: ^2.0.5
+  equatable: ^2.0.8
   shimmer: ^3.0.0
   
   # Icons
-  cupertino_icons: ^1.0.6
+  cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
   riverpod_generator: ^4.0.0+1
-  build_runner: ^2.4.8
+  build_runner: ^2.10.5
 
 flutter:
   uses-material-design: true

@@ -9,6 +9,7 @@ import '../widgets/packages_search_bar.dart';
 import '../../../../shared/widgets/app_error_widget.dart';
 import '../../../../shared/widgets/shimmer_loading.dart';
 import 'package:hooks/hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PackagesScreen extends ConsumerWidget {
   const PackagesScreen({super.key});

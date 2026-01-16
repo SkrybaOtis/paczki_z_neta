@@ -7,6 +7,7 @@ import '../providers/packages_provider.dart';
 import 'download_button.dart';
 import 'package_status_badge.dart';
 import 'package:hooks/hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PackageCard extends ConsumerWidget {
   final PackageEntity package;
@@ -18,8 +19,8 @@ class PackageCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
+    // final theme = Theme.of(context);
+    // final colorScheme = theme.colorScheme;
 
     return Card(
       elevation: 2,
@@ -83,7 +84,7 @@ class _PackageHeader extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        color: colorScheme.surfaceContainerHighest.withOpacity(0.5),
+        color: colorScheme.surfaceContainerHighest..withValues(alpha: 0.5),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
