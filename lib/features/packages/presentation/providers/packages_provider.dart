@@ -1,14 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../core/constants/app_constants.dart';
 import '../../domain/entities/package_entity.dart';
 import '../../domain/usecases/download_package.dart';
 import '../../domain/usecases/get_available_packages.dart';
-import 'package:hooks/hooks.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 
 part 'packages_provider.g.dart';
@@ -219,7 +216,7 @@ class SelectedFilter extends _$SelectedFilter {
 
 @riverpod
 List<PackageEntity> filteredPackages(Ref ref) {
-  final packagesState = ref.watch(packagesNotifierProvider);
+  final packagesState = ref.watch(packagesProvider);
   final filter = ref.watch(selectedFilterProvider);
 
   switch (filter) {

@@ -8,7 +8,6 @@ import '../widgets/packages_filter_bar.dart';
 import '../widgets/packages_search_bar.dart';
 import '../../../../shared/widgets/app_error_widget.dart';
 import '../../../../shared/widgets/shimmer_loading.dart';
-import 'package:hooks/hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PackagesScreen extends ConsumerWidget {
@@ -16,7 +15,7 @@ class PackagesScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final packagesState = ref.watch(packagesNotifierProvider);
+    final packagesState = ref.watch(packagesProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -26,7 +25,7 @@ class PackagesScreen extends ConsumerWidget {
           IconButton(
             icon: const Icon(Icons.refresh),
             onPressed: () {
-              ref.read(packagesNotifierProvider.notifier).refresh();
+              ref.read(packagesProvider.notifier).refresh();
             },
           ),
         ],
@@ -56,7 +55,7 @@ class PackagesScreen extends ConsumerWidget {
       return AppErrorWidget(
         message: state.errorMessage!,
         onRetry: () {
-          ref.read(packagesNotifierProvider.notifier).loadPackages();
+          ref.read(packagesProvider.notifier).loadPackages();
         },
       );
     }

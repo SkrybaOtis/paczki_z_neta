@@ -6,7 +6,6 @@ import '../../domain/entities/package_entity.dart';
 import '../providers/packages_provider.dart';
 import 'download_button.dart';
 import 'package_status_badge.dart';
-import 'package:hooks/hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PackageCard extends ConsumerWidget {
@@ -253,7 +252,7 @@ class _PackageActions extends ConsumerWidget {
     return DownloadButton(
       package: package,
       onDownload: () {
-        ref.read(packagesNotifierProvider.notifier).downloadPackage(package);
+        ref.read(packagesProvider.notifier).downloadPackage(package);
       },
     );
   }
@@ -299,7 +298,7 @@ class _DownloadProgressWidget extends ConsumerWidget {
         TextButton.icon(
           onPressed: () {
             ref
-                .read(packagesNotifierProvider.notifier)
+                .read(packagesProvider.notifier)
                 .cancelDownload(package.id);
           },
           icon: const Icon(Icons.cancel_outlined, size: 18),

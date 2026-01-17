@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../domain/entities/package_entity.dart';
 import '../providers/packages_provider.dart';
 import 'package_card.dart';
-import 'package:hooks/hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PackagesList extends ConsumerStatefulWidget {
@@ -32,7 +31,7 @@ class _PackagesListState extends ConsumerState<PackagesList> {
 
   void _onScroll() {
     if (_isBottom) {
-      ref.read(packagesNotifierProvider.notifier).loadMorePackages();
+      ref.read(packagesProvider.notifier).loadMorePackages();
     }
   }
 
@@ -46,7 +45,7 @@ class _PackagesListState extends ConsumerState<PackagesList> {
   @override
   Widget build(BuildContext context) {
     final packages = ref.watch(searchedPackagesProvider);
-    final packagesState = ref.watch(packagesNotifierProvider);
+    final packagesState = ref.watch(packagesProvider);
 
     if (packages.isEmpty) {
       return const _EmptyPackagesWidget();
@@ -54,7 +53,7 @@ class _PackagesListState extends ConsumerState<PackagesList> {
 
     return RefreshIndicator(
       onRefresh: () async {
-        await ref.read(packagesNotifierProvider.notifier).refresh();
+        await ref.read(packagesProvider.notifier).refresh();
       },
       child: ListView.builder(
         controller: _scrollController,
