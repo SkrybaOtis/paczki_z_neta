@@ -1,11 +1,12 @@
 abstract class AppConstants {
   // Base URL for remote packages index
   static const String packagesIndexUrl = 
-      'https://your-server.com/packages/index.json';
+      'https://github.com/SkrybaOtis/strt_mstr_invests/blob/main/random_paczki/index.json';
+      
   
   // Base URL for downloading packages
   static const String packagesBaseUrl = 
-      'https://your-server.com/packages/';
+      'https://github.com/SkrybaOtis/strt_mstr_invests/tree/main/investigations/';
   
   // Local storage keys
   static const String downloadedPackagesKey = 'downloaded_packages';
